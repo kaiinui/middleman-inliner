@@ -1,0 +1,14 @@
+PATH
+  remote: .
+  specs:
+    middleman-inliner (0.0.11)
+
+GEM
+  remote: http://rubygems.org/
+  specs:
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  middleman-inliner!
