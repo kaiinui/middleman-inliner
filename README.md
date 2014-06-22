@@ -1,3 +1,5 @@
+[![Gem Version](https://badge.fury.io/rb/middleman-inliner.svg)](http://badge.fury.io/rb/middleman-inliner)
+
 middleman-inliner
 =================
 
