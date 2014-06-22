@@ -26,12 +26,17 @@ class Inliner < Middleman::Extension
       }.reduce(:+)
     end
 
-    alias :inline_javascripts :inline_js
-    alias :inline_css_tag :inline_css
+    alias :inline_javascript :inline_js
     alias :inline_js_tag :inline_js
     alias :inline_javascript_tag :inline_js
+    alias :javascript_inline_tag :inline_js
+    alias :js_inline_tag :inline_js
+
     alias :inline_stylesheet :inline_css
+    alias :inline_css_tag :inline_css
     alias :inline_stylesheet_tag :inline_css
+    alias :stylesheet_inline_tag :inline_css
+    alias :css_inline_tag :inline_css
   end
 end
 
