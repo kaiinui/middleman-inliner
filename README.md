@@ -38,9 +38,23 @@ configure :build do
   activate :minify_javascript
   activate :gzip
   activate :minify_html
+  activate :imageoptim
 end
 ```
 
-Deploy it to S3 and distribute with CloudFront is the fastest (and easiest) way.
+```ruby
+gem 'middleman-inliner'
+gem 'middleman-minify_html'
+gem 'middleman-imageoptim'
+```
+
+Deploy it to S3 and distribute with CloudFront is the fastest (and easiest).
 
 See https://github.com/fredjean/middleman-s3_sync
+
+I will write
+==========
+
+-  `middleman-image-inliner`
+-  `middleman-image-lazyloader`
+-  `middleman-asyncload` to load JS/CSS async in one line.
