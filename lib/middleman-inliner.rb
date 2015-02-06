@@ -13,8 +13,13 @@ class Inliner < Middleman::Extension
     def inline_css(*names)
       names.map { |name|
         name += ".css" unless name.include?(".css")
-        css_path = sitemap.resources.select { |p| p.source_file.include?(name) }.first
-        "<style type='text/css'>#{css_path.render}</style>"
+        css_full = sprockets.find_asset(name).to_s
+        
+        compressor = ::Sass::SCSS::CssParser.new(css_full, name, 1).parse
+        compressor.options = {:style => :compressed}
+        css_compressed = compressor.render.strip
+        
+        "<style type='text/css'>#{css_compressed}</style>"
       }.reduce(:+)
     end
 
