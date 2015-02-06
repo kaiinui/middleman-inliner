@@ -13,7 +13,7 @@ class Inliner < Middleman::Extension
     def inline_css(*names)
       names.map { |name|
         name += ".css" unless name.include?(".css")
-        css_path = sitemap.resources.select { |p| p.source_file.include?(name) }.first
+        css_path = sitemap.resources.select { |p| p.source_file.include?(name) unless p.source_file.nil? }.first
         "<style type='text/css'>#{css_path.render}</style>"
       }.reduce(:+)
     end
