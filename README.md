@@ -24,7 +24,7 @@ Install
 activate :inliner
 ```
 
-- Replace your `stylesheet_link_tag` and `javascript_include_tag` to `stylesheet_inline_tag` and `inline_javascript_inline_tag`
+- Replace your `stylesheet_link_tag` and `javascript_include_tag` to `stylesheet_inline_tag` and `javascript_inline_tag`
 
 To Speed your website
 =====================
