@@ -44,7 +44,7 @@ end
 
 ```ruby
 gem 'middleman-inliner'
-gem 'middleman-minify_html'
+gem 'middleman-minify-html'
 gem 'middleman-imageoptim'
 ```
 
