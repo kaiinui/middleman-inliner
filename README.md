@@ -26,6 +26,12 @@ activate :inliner
 
 - Replace your `stylesheet_link_tag` and `javascript_include_tag` to `stylesheet_inline_tag` and `inline_javascript_inline_tag`
 
+- (Optional) if you want to inline an .scss file or a .sass file, include the file extension:
+
+```
+<%= stylesheet_inline_tag "header.scss" %>
+```
+
 To Speed your website
 =====================
 
