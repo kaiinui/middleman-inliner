@@ -40,4 +40,4 @@ class Inliner < Middleman::Extension
   end
 end
 
-Inliner.register(:inliner)
+Middleman::Extensions.register(:inliner, Inliner)
