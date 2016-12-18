@@ -3,10 +3,6 @@ require 'middleman-core'
 class Inliner < Middleman::Extension
   def initialize(app, options_hash={}, &block)
     super
-
-    app.compass_config do |config|
-      config.output_style = :compressed
-    end
   end
 
   helpers do
