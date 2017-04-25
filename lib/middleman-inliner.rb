@@ -3,17 +3,17 @@ require 'middleman-core'
 class Inliner < Middleman::Extension
   def initialize(app, options_hash={}, &block)
     super
-
-    app.compass_config do |config|
-      config.output_style = :compressed
-    end
   end
 
   helpers do
     def inline_css(*names)
       names.map { |name|
         name += ".css" unless name.include?(".css")
-        css_path = sitemap.resources.select { |p| p.source_file.include?(name) }.first
+
+        css_path = sitemap.resources.select do |p|
+          p.source_file && p.source_file.include?(name)
+        end.first
+
         "<style type='text/css'>#{css_path.render}</style>"
       }.reduce(:+)
     end
@@ -40,4 +40,4 @@ class Inliner < Middleman::Extension
   end
 end
 
-Inliner.register(:inliner)
+Middleman::Extensions.register(:inliner, Inliner)
